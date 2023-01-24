@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Xml;
 
 class Principal
 {
@@ -140,6 +139,9 @@ class Principal
         return maximo;
     }
 
+    // cuando hago uso de esta funcion el programa deja de funcionar, pero
+    // antes me muestra absolutamente todos los juegps guardados, no consigo 
+    // ver el problema
     static void MostrarInfoJuego(JuegoMesa[] juegos, int i)
     {
         foreach (JuegoMesa juego in juegos)
