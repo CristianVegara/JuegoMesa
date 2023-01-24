@@ -3,7 +3,25 @@ class JuegoMesa
 {
     private byte edadMinima, minimoJugadores, maximoJugadores;
     private string nombre;
-    private float precio;
+    public float precio;
+
+    public JuegoMesa()
+    {
+        edadMinima = 0;
+        minimoJugadores = 0;
+        maximoJugadores = 0;
+        nombre = "";
+        precio = 0.0f;
+    }
+    public JuegoMesa(byte edadMinima, byte minimoJugadores, byte maximoJugadores, string nombre, float precio)
+    {
+        this.EdadMinima = edadMinima;
+        this.MinimoJugadores = minimoJugadores;
+        this.MaximoJugadores = maximoJugadores;
+        this.nombre = nombre;
+        this.Precio = precio;
+
+    }
 
     public byte EdadMinima
     {
@@ -33,6 +51,7 @@ class JuegoMesa
                 minimoJugadores = 0;
         }
     }
+
     public byte MaximoJugadores
     {
         get
@@ -48,13 +67,16 @@ class JuegoMesa
         }
     }
 
-    public string GetTituloJuego()
+    public string Nombre
     {
-        return nombre;
-    }
-    public void SetTituloJuego(string nombre)
-    {
-        this.nombre = nombre;
+        get
+        {
+            return nombre;
+        }
+        set
+        {
+            nombre = value;
+        }
     }
     public float Precio
     {
