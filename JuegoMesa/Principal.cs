@@ -144,6 +144,15 @@ class Principal
     // ver el problema
     static void MostrarInfoJuego(JuegoMesa[] juegos, int i)
     {
+       // haciendo uso de este de la funcion mostrar de esta forma
+       // muestra todo pero sin tener ningun dato guardado
+        
+       // JuegoMesa juegoMesa = new JuegoMesa();
+       // for(i = 0; i < juegos.Length; i++)
+       // {
+       //     juegoMesa.Mostrar();
+       // }
+        
         foreach (JuegoMesa juego in juegos)
         {
             juego.Mostrar();
