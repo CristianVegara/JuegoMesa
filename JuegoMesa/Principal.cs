@@ -139,24 +139,23 @@ class Principal
         return maximo;
     }
 
-    // cuando hago uso de esta funcion el programa deja de funcionar, pero
-    // antes me muestra absolutamente todos los juegps guardados, no consigo 
-    // ver el problema
+    // falta resolver la busuqeda por titulo
+
     static void MostrarInfoJuego(JuegoMesa[] juegos, int i)
     {
-       // haciendo uso de este de la funcion mostrar de esta forma
-       // muestra todo pero sin tener ningun dato guardado
-        
-       // JuegoMesa juegoMesa = new JuegoMesa();
-       // for(i = 0; i < juegos.Length; i++)
-       // {
-       //     juegoMesa.Mostrar();
-       // }
-        
-        foreach (JuegoMesa juego in juegos)
-        {
-            juego.Mostrar();
-        }
+
+        // JuegoMesa juegomesa = new JuegoMesa();
+
+        //foreach (JuegoMesa juego in juegos)
+        //{
+        //    juego.Mostrar();
+        //}
+
+        //juegos[i].Nombre, juegos[i].EdadMinima,juegos[i].MinimoJugadores, juegos[i].MaximoJugadores, juegos[i].Precio
+
+        //muestra el juego mas caro pero no por titulo
+
+        juegos[i].Mostrar();
     }
 
     static void BuscarPorTitulo(JuegoMesa[] juegos, int cantidad)
@@ -170,7 +169,7 @@ class Principal
             if (juegos[i].Nombre.ToUpper().Contains
                 (buscarTitulo.ToUpper()))
             {
-                MostrarInfoJuego(juegos);
+                MostrarInfoJuego(juegos, cantidad);
             }
         }
 
