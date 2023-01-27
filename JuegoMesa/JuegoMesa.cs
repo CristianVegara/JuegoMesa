@@ -3,7 +3,7 @@ class JuegoMesa
 {
     private byte edadMinima, minimoJugadores, maximoJugadores;
     private string nombre;
-    public float precio;
+    private float precio;
 
     public JuegoMesa()
     {

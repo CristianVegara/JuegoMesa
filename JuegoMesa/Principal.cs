@@ -30,6 +30,7 @@ class Principal
 
     static void RecogerInfoJuego(out JuegoMesa nuevoJuego, ref bool errorCatch)
     {
+        float precioFinal;
         nuevoJuego = new JuegoMesa();
         Console.Write("Nombre del juego: ");
         nuevoJuego.Nombre = Console.ReadLine();
@@ -49,10 +50,11 @@ class Principal
             Convert.ToByte(Console.ReadLine());
 
         Console.Write("Precio del juego: ");
-        if (!float.TryParse(Console.ReadLine(), out nuevoJuego.precio))
+        if (!float.TryParse(Console.ReadLine(), out precioFinal))
         {
             errorCatch = true;
         }
+        nuevoJuego.Precio = precioFinal;
     }
 
     static void NuevoJuego(JuegoMesa[] juegos, ref int cantidad)
@@ -139,23 +141,11 @@ class Principal
         return maximo;
     }
 
-    // falta resolver la busuqeda por titulo
-
     static void MostrarInfoJuego(JuegoMesa[] juegos, int i)
     {
 
-        // JuegoMesa juegomesa = new JuegoMesa();
-
-        //foreach (JuegoMesa juego in juegos)
-        //{
-        //    juego.Mostrar();
-        //}
-
-        //juegos[i].Nombre, juegos[i].EdadMinima,juegos[i].MinimoJugadores, juegos[i].MaximoJugadores, juegos[i].Precio
-
-        //muestra el juego mas caro pero no por titulo
-
         juegos[i].Mostrar();
+
     }
 
     static void BuscarPorTitulo(JuegoMesa[] juegos, int cantidad)
@@ -169,7 +159,7 @@ class Principal
             if (juegos[i].Nombre.ToUpper().Contains
                 (buscarTitulo.ToUpper()))
             {
-                MostrarInfoJuego(juegos, cantidad);
+                MostrarInfoJuego(juegos, i);
             }
         }
 
